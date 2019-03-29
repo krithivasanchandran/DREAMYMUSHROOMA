@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="png"
+	href="https://img.icons8.com/cotton/64/000000/moon.png" />
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link href="./css/emoji.css" rel="stylesheet">
+<title>Do You Dream</title>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column-left {
+	float: left;
+	width: 25%;
+	padding: 10px;
+	height: 470px;
+	margin-right: 10px;
+	background-color: #fac564;
+	border-radius: 20px 20px 20px 20px;
+	border-style: groove;
+	border-left: thick groove aqua;
+}
+
+.column-left button{
+	float:left;
+	margin-top: 30px;
+	margin-right: 16px;
+	margin-bottom: 20px;
+	margin-left: 50px;
+	font-style: normal;
+}
+
+.column-right {
+	float: left;
+	width: 74%;
+	height: 490px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.headingTitle {
+	color: #F98866;
+	font-family: fantasy;
+	font-weight: lighter;
+	text-align: center;
+	font-size: 45px;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	font-smoothing: antialiased;
+	background-color: #5774b8;
+}
+
+#instructions {
+	font: 16px 'AmericanTypewriter', Cambria, Georgia;
+	color: #282625;
+	line-height: 30px;
+}
+
+.paper {
+	padding: 37px 55px 27px;
+	position: relative;
+	border: 1px solid #B5B5B5;
+	background: #ffffff;
+	background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+	background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+	background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+	-webkit-background-size: 100% 30px;
+	-moz-background-size: 100% 30px;
+	-ms-background-size: 100% 30px;
+	background-size: 100% 30px;
+	height: 470px;
+	overflow-y: scroll;
+	border-radius: 20px 20px 20px 20px;
+	overflow: hidden;
+}
+
+.paper::before {
+	content: "";
+	z-index: -1;
+	margin: 0 1px;
+	width: 706px;
+	position: absolute;
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	background: white;
+	bottom: -3px;
+	left: 0;
+	background: white;
+	border: 3px solid #B5B5B5;
+}
+
+.paper::after {
+	content: "";
+	position: absolute;
+	width: 0px;
+	top: 0;
+	left: 39px;
+	bottom: 0;
+	border-left: 3px solid #F8D3D3;
+	left: 39px;
+}
+
+.paper::focus {
+	line-height: 25px;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: fuchsia;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+  opacity:0.7;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+</style>
+</head>
+<body>
+
+	<h1 class="headingTitle">Dreamy Mashrooma</h1>
+
+	<div class="row">
+		<div class="column-left">
+			<button class="button"><span> Home </span></button>
+			<button class="button"><span> Save to Server </span> </button>
+			<button class="button"><span> Help </span></button>
+		</div>
+		
+		<div class="column-right">
+
+			<div id="instructions" class="paper">
+
+				<b class="lead emoji-picker-container" style="color: purple;">Tell
+					us about the month and year you are writing your dream ::<br />
+				</b> <b style="color: purple;">Tell us what's your profession ::</b><br />
+				<b style="color: purple;">Would like to share your dream with
+					the community :: </b><br />
+				<div data-emojiable="true" data-emoji-input="unicode"
+					contentEditable="true"></div>
+			</div>
+		</div>
+	</div>
+	
+	<marquee direction = "left">Tips! People who have similar dreams could connect emotionally !</marquee>
+
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="./js/config.js"></script>
+	<script src="./js/util.js"></script>
+	<script src="./js/jquery.emojiarea.js"></script>
+	<script src="./js/emoji-picker.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			// Initializes and creates emoji set from sprite sheet
+			window.emojiPicker = new EmojiPicker({
+				emojiable_selector : '[data-emojiable=true]',
+				assetsPath : './img/',
+				popupButtonClasses : 'fa fa-smile-o'
+			});
+			window.emojiPicker.discover();
+		});
+		
+	</script>
+
+</body>
+</html>
