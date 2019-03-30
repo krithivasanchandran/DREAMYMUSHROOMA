@@ -7,7 +7,7 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
 	rel="stylesheet">
-<link href="./css/emoji.css" rel="stylesheet">
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 <title>Do You Dream</title>
 <style>
 * {
@@ -54,7 +54,7 @@
 	font-family: fantasy;
 	font-weight: lighter;
 	text-align: center;
-	font-size: 45px;
+	font-size: 50px;
 }
 
 body {
@@ -84,7 +84,7 @@ body {
 	height: 470px;
 	overflow-y: scroll;
 	border-radius: 20px 20px 20px 20px;
-	overflow: hidden;
+	
 }
 
 .paper::before {
@@ -174,7 +174,45 @@ body {
   right: 0;
 }
 
+.popup-overlay {
+visibility:hidden;
+}
+
+.popup-content {
+visibility:hidden;
+}
+
+.popup-overlay.active{
+visibility:visible;
+}
+
+.popup-content.active {
+visibility:visible;
+}
+
 </style>
+<script type="text/javascript">
+    function ShowLoading(e) {
+        var div = document.createElement('div');
+        var img = document.createElement('img');
+        img.src = './image/loader.gif';
+        img.style.width = '180px';
+        img.style.height = '135px';
+        div.style.cssText = 'position: fixed; top: 38%; left: 40%; z-index: 5000; width: 20px; text-align: center; background: #EDDBB0; opacity: 0.8;';
+        div.appendChild(img);
+        document.body.appendChild(div);
+        return true;
+    }	
+    
+    function formSubmissions(){
+    	alert("Agree for Submission !!");
+    	var patrick = document.contentpad.contentdream.value;
+    	alert(patrick);
+    	document.getElementById("scratchpad").submit();
+    }
+    
+
+</script>
 </head>
 <body>
 
@@ -183,28 +221,42 @@ body {
 	<div class="row">
 		<div class="column-left">
 			<button class="button"><span> Home </span></button>
-			<button class="button"><span> Save to Server </span> </button>
-			<button class="button"><span> Help </span></button>
+			<button class="button" onclick="ShowLoading(); formSubmissions();"><span> Save to Server </span> </button>
+			<button class="button" ><a href="help.html" style="color:white;"><span  onclick="hide(); return false"> Help </span></a></button>
 		</div>
 		
 		<div class="column-right">
 
+        <form id="scratchpad" name="contentpad" method="post" action="UserDreamPost">
 			<div id="instructions" class="paper">
 
-				<b class="lead emoji-picker-container" style="color: purple;">Tell
-					us about the month and year you are writing your dream ::<br />
-				</b> <b style="color: purple;">Tell us what's your profession ::</b><br />
+				<b style="color: purple;">Tell
+					us about the month and year you are writing your dream :: &nbsp;<i class="em em-date"></i><br />
+				</b> <b style="color: purple;">Tell us what's your profession :: &nbsp;<i class="em em-male-technologist"></i></b><br />
 				<b style="color: purple;">Would like to share your dream with
-					the community :: </b><br />
-				<div data-emojiable="true" data-emoji-input="unicode"
-					contentEditable="true"></div>
+					the community :: &nbsp;<i class="em em-night_with_stars"></i></b><br />
+				<i class="em em-point_right" ></i><div contentEditable="true"></div>
+				
 			</div>
+		</form>
 		</div>
 	</div>
 	
-	<marquee direction = "left">Tips! People who have similar dreams could connect emotionally !</marquee>
-
+	<marquee direction = "left" style="color:white;">
+	Fact #1: People who seem to have similar dreams could easily connect emotionally ! &nbsp;&nbsp;&nbsp;&nbsp;
+	Fact #2: Lucid dreaming 	&nbsp;&nbsp;&nbsp;&nbsp;
+	Fact #3: Inventions are inspired by dreams   &nbsp;&nbsp;&nbsp;&nbsp;
+	Fact #4: Premonition dreams  &nbsp;&nbsp;&nbsp;&nbsp;
+	Fact #5: Brains are more active in sleep than during the day  &nbsp;&nbsp;&nbsp;&nbsp;
+	Fact #6: Dreams increases your creativity as a person  &nbsp;&nbsp;&nbsp;&nbsp;
+	Fact #7: You always dream - you dont just remember it  &nbsp;&nbsp;&nbsp;&nbsp;
+	Fact #8: In your dreams, you only see faces that you already know  &nbsp;&nbsp;&nbsp;&nbsp;
+	Fact #9: Dreams tend to be negative  &nbsp;&nbsp;&nbsp;&nbsp;
+	Fact #10: Not everyone dreams in color  &nbsp;&nbsp;&nbsp;&nbsp;
+	</marquee>
+	
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	
 	<script src="./js/config.js"></script>
 	<script src="./js/util.js"></script>
 	<script src="./js/jquery.emojiarea.js"></script>
@@ -220,6 +272,15 @@ body {
 			});
 			window.emojiPicker.discover();
 		});
+		
+		$(".button.open").on("click", function(){
+			$(".popup, .popup-content").addClass("active");
+		});
+		
+		$(".close, .popup").on("click", function(){
+			$(".popup, .popup-content").removeClass("active");
+		});
+		
 		
 	</script>
 
