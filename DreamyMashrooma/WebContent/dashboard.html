@@ -8,6 +8,9 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
 	rel="stylesheet">
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+ <script type="text/javascript">
+    $("#showonresponsetrue").hide();
+  </script>
 <title>Do You Dream</title>
 <style>
 * {
@@ -190,10 +193,43 @@ visibility:visible;
 visibility:visible;
 }
 
+.leftspacer{
+margin-left: 19px;
+}
+
+.linespacer{
+line-height: 40px;
+}
+
+.ajaxresponseondreamcontentsubmit{
+	margin: 20px auto;
+    width: 100%;
+    max-width: 900px;
+    border: none;
+    min-height: 30px;
+    background: #fff;
+    padding: 15px 25px 50px 30px;
+    border-radius : 15px 15px 15px 15px;
+}
+
+p {
+  margin: 0 20px 20px;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: lighten(black,20%);
+  margin-top: 5px; 
+  display:block; 
+  margin-block-start: 1em; 
+  margin-block-end: 1em;
+  text-align: left;
+}
+
 </style>
 <script type="text/javascript">
     function ShowLoading(e) {
+    	
         var div = document.createElement('div');
+        div.id = "ploader";
         var img = document.createElement('img');
         img.src = './image/loader.gif';
         img.style.width = '180px';
@@ -205,13 +241,25 @@ visibility:visible;
     }	
     
     function formSubmissions(){
-    	alert("Agree for Submission !!");
-    	var patrick = document.contentpad.contentdream.value;
-    	alert(patrick);
-    	document.getElementById("scratchpad").submit();
-    }
+    	var patrick = document.getElementById("dreamusercontent").innerHTML;
+    	
+    	  $.ajax({
+    		     url: "UserDreamPost", 
+    		     data: "content="+patrick,
+    		     type: "POST", 
+    		     cache: true,
+    		     success: function(response){
+    		       alert("Success !! Thanks for submitting your dream contents. Now Redirecting to index Page.");
+    		       $("#scratchpad").hide();
+    		       var uniqueid = response.replace("Served at: /DreamyMashrooma","");
+    		       $("#kert").text(uniqueid);
+    		       $("#showonresponsetrue").show();
+    		       $("#submission").show();
+    		       $("#ploader").hide();
+    		     }
+    	  });
+     }
     
-
 </script>
 </head>
 <body>
@@ -220,14 +268,14 @@ visibility:visible;
 
 	<div class="row">
 		<div class="column-left">
-			<button class="button"><span> Home </span></button>
+			<button class="button"><a href="index.html" style="color:white;"><span onclick="hide(); return false"> Home </span></a></button>
 			<button class="button" onclick="ShowLoading(); formSubmissions();"><span> Save to Server </span> </button>
 			<button class="button" ><a href="help.html" style="color:white;"><span  onclick="hide(); return false"> Help </span></a></button>
 		</div>
 		
 		<div class="column-right">
 
-        <form id="scratchpad" name="contentpad" method="post" action="UserDreamPost">
+        <form id="scratchpad" name="contentpad" method="Post" action="UserDreamPost">
 			<div id="instructions" class="paper">
 
 				<b style="color: purple;">Tell
@@ -235,10 +283,20 @@ visibility:visible;
 				</b> <b style="color: purple;">Tell us what's your profession :: &nbsp;<i class="em em-male-technologist"></i></b><br />
 				<b style="color: purple;">Would like to share your dream with
 					the community :: &nbsp;<i class="em em-night_with_stars"></i></b><br />
-				<i class="em em-point_right" ></i><div contentEditable="true"></div>
+				<i class="em em-point_right" ></i><div id="dreamusercontent" contentEditable="true"></div>
 				
 			</div>
 		</form>
+		
+		<div id="showonresponsetrue" class="ajaxresponseondreamcontentsubmit" style="display:none">
+   			 <article>
+   			     <h4 id="submission">Your submission is saved. Your Submission no :: <strong id="kert" style="color:fuchsia;"></strong></h4>
+    			     <p> Privacy policy is applied to your content. The content will be reviewed by our
+   			         reviewers before being posted on live gallery area anonymously. Content will go live for the other users 
+   			         to view and comment on the post. </p>
+   			 </article>
+   	    </div>
+		
 		</div>
 	</div>
 	

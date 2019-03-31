@@ -32,24 +32,6 @@ body {
   border-radius: 5px;
 }
 
-.document__content {
-  column-count: 1;
-  @media screen and (min-width:1200px) {
-    column-count: 2;
-  }
-  column-gap: 20px;
-  padding: 40px 10px 20px 30px;
-  margin: 30px 100px;
-  background-color:#fac564;
-  border-radius: 15px 50px; 
-}
-
-.homep{
- color:#8D230F;
- font-weight: lighter;
-}
-
-
 h1 {
   text-align: center;
   font-size: 3em;
@@ -65,6 +47,11 @@ p {
   font-size: 16px;
   line-height: 1.5em;
   color: lighten(black,20%);
+  margin-top: 5px; 
+  display:block; 
+  margin-block-start: 1em; 
+  margin-block-end: 1em;
+  text-align: left;
 }
 
 
@@ -85,9 +72,17 @@ p {
     border: none;
     min-height: 30px;
     background: #fff;
-    padding: 15px 25px 10px 25px;
+    padding: 15px 25px 50px 30px;
     border-radius: 20px;
     }
+
+.leftruler{
+margin-left: 19px;
+}
+
+.liruler{
+line-height: 40px;
+}
 
 </style>
 </head>
@@ -102,35 +97,45 @@ p {
     
     <div class="articlehelp">
     <article>
-      <h2 style="margin-left: 19px;"> Help Page </h2>
-      <p style="margin-top: 5px; display:block; margin-block-start: 1em; margin-block-end: 1em;">
-        Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text 
-         Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text
-          Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text 
-         Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text
-          Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text 
-         Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text
-          Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text 
-         Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text
-         
-      </p>
-      <p style="margin-top: 5px; display:block; margin-block-start: 1em; margin-block-end: 1em;">
-        Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text 
-         Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text
-          Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text 
-         Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text
-          Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text 
-         Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text
-          Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text 
-         Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text  Filler Text
-         
-      </p>
+      <h2 class="leftruler" style="margin-bottom: 25px;"> Help Page </h2>
+      <h4 class="leftruler"> What's the platform all about </h4>
+	      <p>
+	         Privacy safe content sharing social platform - strictly sharing about what's your last night dream is all about.
+	         The platform is not to be judged by anyone as all the content posted by the user are shared anonymously in our 
+	         gallery. Dreams usually don't have logic and are full of images and the persons they have seen. They are short
+	         stories which could be conveyed over our platform to comment about their crazy dreams. The anonymous users 
+	         will  be not be able to connect to each other as traditional social sharing platform , but instead comment on 
+	         on the posts that have been posted by other anonymous users. Personal identifiable information is strictly 
+	         prohibited from sharing and if they share , we are not deemed responsible for their actions. 
+	      </p>
+      	  <p>
+             We sincerely restrict uploading of images as it will violate the privacy law of the user and strictly remain to 
+             text content as the content will be reviewed by our review panel before it is being posted live on to the main stream
+             gallery. You can download the data that you have shared and you could analyse your mood or sentiment of your dream
+             using our google natural processing libraries free of cost. Again we don't store any of the user data, the response
+             could be copy pasted to your local desktop machine or download it as a file. 
+      	  </p>
+      	  <h5 class="leftruler"> Rules of our dream sharing platform: </h5>
+      	  <ul class="liruler">
+      	       <li> Be honest about your dream and try to convey as much as possible. </li>
+      	       <li> No pornographic  adult images or unparliamentery words contents </li>
+      	       <li> We don't save your personal information </li>
+      	       <li> Mood , Sentiment analysis is requested based on your inputs</li>
+      	       <li> You should download the API response as due to privacy policy we don't save your data.</li>
+      	       <li> Please don't share your personal medical complications and personal information in your dream.</li>
+      	       <li> Connect with our panel of doctors if you think you have mental disability.</li>
+      	       <li> The platform is free to use and the ads are shown not based on the users cookies data.</li>
+      	       <li> Let's build a stronger community together of dreamers.</li>
+      	  </ul>
+      	  <p>
+      	   Get in touch with our team <strong>info@dreamymashrooma.com</strong> for any support related queries or questions about our platform. 
+      	  </p>
     
     </article>
     </div>
     
   </div>
-  <p style="text-align: center; font-weight: lighter;"><a href="dashboard.html"><button class="w3-button w3-orange" >Go to Dashboard</button></a></p>
+  <p style="text-align: center; font-weight: lighter; "><a href="dashboard.html"><button class="w3-button w3-orange" >Go to Dashboard</button></a></p>
 </div>
 
 </body>
