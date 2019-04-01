@@ -244,7 +244,7 @@ p {
     	var patrick = document.getElementById("dreamusercontent").innerHTML;
     	
     	  $.ajax({
-    		     url: "UserDreamPost", 
+    		     url: "/UserDreamPost", 
     		     data: "content="+patrick,
     		     type: "POST", 
     		     cache: false,
@@ -260,7 +260,7 @@ p {
      }
     
     function gallerysubmission(){
-    	window.location = 'Gallery.jsp';
+    	window.location = '/GalleryDisplayAnonymousUserContent';
     }
     
 </script>

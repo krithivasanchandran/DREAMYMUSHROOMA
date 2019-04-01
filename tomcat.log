@@ -1,0 +1,44 @@
+Apr 01, 2019 10:19:55 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\ride-6.1.1-win64\OracleJDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Python36\Scripts\;C:\Program Files\Python36\;C:\Perl64\site\bin;C:\Perl64\bin;C:\Program Files (x86)\RSA SecurID Token Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Perforce;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.3.9\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\PuTTY\;C:\Program Files\Microsoft VS Code\bin;C:\Go\bin;C:\Users\krichandran\AppData\Local\Microsoft\WindowsApps;C:\Users\krichandran\AppData\Local\Polycom\RealPresence Desktop\;.
+Apr 01, 2019 10:19:55 AM org.apache.tomcat.util.digester.SetPropertiesRule begin
+WARNING: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'source' to 'org.eclipse.jst.jee.server:DreamyMashrooma' did not find a matching property.
+Apr 01, 2019 10:19:55 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-8080"]
+Apr 01, 2019 10:19:56 AM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Apr 01, 2019 10:19:56 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-8081"]
+Apr 01, 2019 10:19:56 AM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Apr 01, 2019 10:19:56 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-8082"]
+Apr 01, 2019 10:19:56 AM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Apr 01, 2019 10:19:56 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8083"]
+Apr 01, 2019 10:19:56 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Apr 01, 2019 10:19:56 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 1201 ms
+Apr 01, 2019 10:19:56 AM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Apr 01, 2019 10:19:56 AM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.47
+Apr 01, 2019 10:19:56 AM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [226] milliseconds.
+Apr 01, 2019 10:19:57 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-8080"]
+Apr 01, 2019 10:19:57 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-8081"]
+Apr 01, 2019 10:19:57 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-8082"]
+Apr 01, 2019 10:19:57 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8083"]
+Apr 01, 2019 10:19:57 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Apr 01, 2019 10:19:57 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1275 ms
+ Clean Text String :: 
+Apr 01, 2019 10:21:21 AM org.apache.jasper.compiler.TldLocationsCache tldScanJar
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+ Clean Text String :: 

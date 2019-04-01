@@ -50,26 +50,14 @@
 		"moreText"	: "See More",
 		"lessText"	: "Less",
 	});
-
+	
+    function redirect(){
+    window.location = "/GalleryDisplayAnonymousUserContent";
+    }
 </script>
 <style>
-
-html{
-
-  content: "";
-  position: relative;
-  border: 10px dashed #FF0000;
-  top: -8px;
-  bottom: -8px;
-  left: -8px;
-  right: -8px;
-  padding-bottom : 75px;
-}
-
-html:before {left:0;right:0;border-radius:60px}
-
 body {
-	font: 16px 'AmericanTypewriter', Cambria, Georgia;
+	font: 13px 'AmericanTypewriter', Cambria, Georgia;
 	line-height: 30px;
 }
 
@@ -101,59 +89,18 @@ body {
 .card-text {
 	padding: 10px 25px 10px 25px;
 }
-
-.button {
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 330px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  margin-left: 17%;
-  margin-top: 3%;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-  opacity:0.7;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
 </style>
 </head>
 
 
-<body>
+<body onload="redirect();">
 
 	<h1 class="headingTitle">Dreamy Mushrooma :: User's Gallery</h1>
 	
 	<div class="container">
 		<div class="row">
 		<% if(listcontentid == null || listcontentid.isEmpty()){ %>
+		<b> Fail proof - below is the default content that display if there is not content registered. </b>
 		<div class="col-md-6">
 				<div class="card" id="spacer">
 					<div class="card-block">
@@ -233,8 +180,6 @@ body {
 		
 		</div>
 	</div>
-   			 <button class="button"><a href="dashboard.html" style="color:white;"><span onclick="hide(); return false">Go to Dashboard ::></span></a></button>
-   			 <button class="button" style="margin-left: 18%;"><a href="index.html" style="color:white;"><span onclick="hide(); return false">Home ::></span></a></button>
 
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
